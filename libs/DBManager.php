@@ -5,7 +5,7 @@ class DBManager {
   protected $record_connection_map = array();
   protected $records = array();
 
-  public function conncet($name, $params) {
+  public function connect($name, $params) {
     $params = array_merge(array(
       'dsn'      =>  null,
       'user'     =>  '',
@@ -48,7 +48,7 @@ class DBManager {
 
   public function get($record_name) {
     if (!isset($this->records[$record_name])) {
-      $record_class = $record_name . 'record';
+      $record_class = $record_name;
       $con = $this->getConnectionForRecord($record_name);
 
       $record = new $record_class($con);

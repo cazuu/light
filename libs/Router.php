@@ -39,6 +39,6 @@ class Router {
         return $params;
       }
     }
-    return $false;
+    return false;
   }
 }
